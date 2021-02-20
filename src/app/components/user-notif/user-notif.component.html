@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="menu">
+                
+                    <div>
+                        <a routerLink="/user-profil"> <img src="../../../assets/images/logoPangoBook.jpg" alt="logo book"> <strong> {{titre}} </strong></a> 
+
+                    </div>
+                    <div >
+                        <a routerLink="/accueil" > <img src="../../../assets/images/home.jpg" alt="logo accueil"> </a>
+
+                    </div>
+                    <div>
+                        <a routerLink="/notifications" class="active"> <img src="../../../assets/images/notif.png" alt="logo notif"> </a> 
+                        <div class="notif" *ngIf="compteur !== 0"><span>{{compteur}}</span> </div>
+                        
+                    </div>
+                    <!--<div><button type="button" class="btn btn-info" routerLink="/" (click)="deco()">Déconnexion</button></div>-->
+                
+            </div>
+        </div>
+
+    </div>
+    <br> <br>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <tr *ngFor="let amigo of tabFollowers, let i = index">
+                <td >
+                    <div *ngFor="let user of listeProfil">
+                        <span *ngIf="amigo === user._id">
+                            <strong>{{user.username}} </strong>  a commencé à vous suivre ... 
+                        </span>
+
+                    </div>
+
+                </td>
+            </tr>
+
+        </div>
+
+    </div>
+
+</div>

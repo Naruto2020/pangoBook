@@ -1,0 +1,132 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="menu">
+                
+                    <div>
+                        <a routerLink="/user-profil/" class="active"> <img src="../../../assets/images/logoPangoBook.jpg" alt="logo book"> <strong> {{titre}} </strong></a> 
+                        <div> {{userDisplayName}} </div>
+
+                    </div>
+                    <!--<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                        <form class="form-inline my-2 my-lg-0" [formGroup]="goToUser">
+                            <input class="form-control mr-sm-2" type="search" placeholder="recherche" formControlName="nom" aria-label="recherche">
+                            <button *ngIf class="btn btn-outline-success my-2 my-sm-0 " type="submit" (click)="connexion()">Search</button>
+                            
+                        </form>
+
+                    </div>-->
+                    <div >
+                        <a routerLink="/accueil"> <img src="../../../assets/images/home.jpg" alt="logo accueil"> </a>
+
+                    </div>
+                    <div>
+                        <a routerLink="/notifications"> <img src="../../../assets/images/notif.png" alt="logo notif"> </a> 
+                        <div class="notif" *ngIf="compteur !== 0"><span>{{compteur}}</span> </div>
+
+                    </div>
+                    <div><button type="button" class="btn btn-info" (click)="deco()">Déconnexion</button></div>  
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-12">
+                    <br>
+                    <h2>Liste Amis</h2>
+
+                </div>
+                
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">Pseudo</th>
+                  <th scope="col">Age</th>
+                  <th scope="col">Famille</th>
+                  <th scope="col">Race</th>
+                  <th scope="col">Nourriture</th>
+                </tr>
+            </thead>
+    </table> 
+    <tr *ngFor="let fwers of tabFollowers">
+        <td>
+            <div *ngFor=" let fwings of tabFollowings">
+                <div *ngIf="fwers === fwings">
+                    <div *ngFor="let user of listesProfils">
+                        <div *ngIf="fwings === user._id" class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <span> {{user.username}} </span>
+                                    <span> {{user.age}} </span>
+                                    <span> {{user.famille}} </span>
+                                    <span> {{user.race}} </span>
+                                    <span> {{user.nourriture}} </span>
+
+                                    <!--<button>
+                                        <i
+                                        routerLink="/user-update-profil/{{ user._id }}"
+                                        class="fa fa-edit"
+                                        style="font-size: 20px; color: grey"
+                                        ></i>
+                                    </button>
+                                    &nbsp;
+                                    <button (click)="cancelProfil()">
+                                        <i
+                                        routerLink="/user-profils/{{user._id}} "
+                                        class="fa fa-trash"
+                                        style="font-size: 20px; color: red"
+                                        ></i>
+                                      </button>-->
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+        </td>
+    
+    </tr>
+       
+            <!--<tbody *ngFor='let profil of listesProfils'>
+                <tr *ngIf="fwings === profil._id"> 
+    
+                        <td> {{profil.username}} </td>
+                        <td> {{profil.age}} </td>
+                        <td> {{profil.famille}} </td> 
+                        <td> {{profil.race}} </td>
+                        <td> {{profil.nourriture}} </td>  
+                        <td>
+                            <button>
+                                <i
+                                routerLink="/user-update-profil/{{ profil._id }}"
+                                class="fa fa-edit"
+                                style="font-size: 20px; color: grey"
+                                ></i>
+                            </button>
+                        </td>     
+                        &nbsp; 
+                        <td>
+                          <button (click)="cancelProfil()">
+                            <i
+                            routerLink="/user-profils/{{profil._id}} "
+                            class="fa fa-trash"
+                            style="font-size: 20px; color: red"
+                            ></i>
+                          </button>
+                        </td>                     
+                </tr>         
+            </tbody>-->
+
+</div>
+
+

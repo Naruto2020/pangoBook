@@ -1,0 +1,98 @@
+<div
+*ngIf="alert"
+class="alert alert-success alert-dismissible fade show"
+role="alert"
+>
+<strong>success !</strong> le profil a bien été supprimé!
+<button
+  (click)="fermerAlert()"
+  type="button"
+  class="close"
+  data-dismiss="alert"
+  aria-label="Close"
+>
+  <span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="menu">
+                
+                    <div>
+                        <a routerLink="/admin/:_id"> <img src="../../../assets/images/logoPangoBook.jpg" alt="logo book"> <strong> {{titre}} </strong></a> 
+
+                    </div>
+                    <!--<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                        <form class="form-inline my-2 my-lg-0" [formGroup]="goToUser">
+                            <input class="form-control mr-sm-2" type="search" placeholder="recherche" formControlName="nom" aria-label="recherche">
+                            <button *ngIf class="btn btn-outline-success my-2 my-sm-0 " type="submit" (click)="connexion()">Search</button>
+                            
+                        </form>
+
+                    </div>-->
+                    <div >
+                        <a routerLink="/admin/:_id" class="active"><h1>ADMINISTRATION</h1> </a>
+
+                    </div>
+                    <!--<div>
+                        <a routerLink="/notifications"> <img src="../../../assets/images/notif.png" alt="logo notif"> </a> 
+
+                    </div>
+                    <div><button type="button" class="btn btn-info" routerLink="/" (click)="deco()">Déconnexion</button></div>-->
+                
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-12">
+                    <br>
+                    <h2>Liste utilisateurs</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                              <th scope="col">Pseudo</th>
+                              <th scope="col">Age</th>
+                              <th scope="col">Famille</th>
+                              <th scope="col">Race</th>
+                              <th scope="col">Nourriture</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor='let profil of listesProfils'>                
+                              <td> {{profil.username}} </td>
+                              <td> {{profil.age}} </td>
+                              <td> {{profil.famille}} </td> 
+                              <td> {{profil.race}} </td>
+                              <td> {{profil.nourriture}} </td>  
+                              <td>
+                                <button>
+                                    <i
+                                    routerLink="/user-update-profil/{{ profil._id }}"
+                                    class="fa fa-edit"
+                                    style="font-size: 20px; color: grey"
+                                    ></i>
+                                </button>
+                            </td>  
+                            &nbsp; 
+                            <td>
+                              <button (click)="cancelProfil()">
+                                <i
+                                routerLink="/admin/{{profil._id}} "
+                                class="fa fa-trash"
+                                style="font-size: 20px; color: red"
+                                ></i>
+                              </button>
+                            </td>      
+                            </tr>         
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

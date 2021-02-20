@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  creatUrl : "http://127.0.0.1:2000/api/user/register",
+  connectUrl : "http://127.0.0.1:2000/api/user/login",
+  disconectUrl : "http://127.0.0.1:2000/api/user/logout",
+  displayUrl : "http://127.0.0.1:2000/api/user",
+  jwtUrl : "http://127.0.0.1:2000/jwtid",
+  ajtAmisUrl : "http://127.0.0.1:2000/api/user/follow",
+  retAmisUrl : "http://127.0.0.1:2000/api/user/unfollow",
 };
 
 /*

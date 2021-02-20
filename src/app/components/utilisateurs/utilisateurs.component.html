@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="sign">
+                <div (click)="toggleSign()"class=togg> <a routerLink="/">S'inscrire </a> </div>
+                <div (click)="toggleSign()"class=togg> <a routerLink="/"> Connexion</a>  </div>
+                <div *ngIf="alert1"  class="conex"> <app-sign-up></app-sign-up> </div>
+                <div *ngIf="alert2" class="conex"> <app-sign-in></app-sign-in> </div>            
+                
+            </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 offset-lg-2">
+          
+            <img src="../../../assets/images/pangolin.jpg" alt="pangolin">
+          
+        </div>
+    </div>
+</div>

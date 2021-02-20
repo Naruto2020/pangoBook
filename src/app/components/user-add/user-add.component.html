@@ -1,0 +1,100 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row menu">
+                <div class="col-lg-6">
+                    <button type="button" class="btn btn-info" routerLink="/accueil">Retour</button>
+        
+                </div>
+                <div class="col-lg-6">
+                    <h4> {{displayUsrName}} </h4>
+        
+                </div>
+    
+            </div>
+        </div>
+        <div class="col-lg-12">
+
+
+            <form [formGroup]="editProfil">
+
+                <!--  <div class="form-group">
+                   <label for="exampleFormControlFile1">votre photo</label>
+                   <input type="file"  multiple (change)="selectImage($event)" class="form-control-file" required>
+                 
+                 </div> -->
+               
+                 <div class="form-group">
+                   <label>Pseudo</label>
+                   <input
+                     type="text"
+                     class="form-control"
+                     required
+                     formControlName="username"
+                   />
+                 </div>  
+        
+                 <div class="form-group">
+                   <label>Âge</label>
+                   <input
+                     type="number"
+                     class="form-control"
+                     formControlName="age"
+                   />
+                 </div>
+                 <div class="form-group">
+                   <label>Famille</label>
+                   <input
+                     type="text"
+                     class="form-control"
+                     formControlName="famille"
+                   />
+                 </div>
+                 <div class="form-group">
+                   <label>Nourriture</label>
+                   <input
+                     type="text"
+                     class="form-control"
+                     formControlName="nourriture"
+                   />
+                 </div>
+                 <div class="form-group">
+                   <label>Race</label>
+                   <input
+                     type="text"
+                     class="form-control"
+                     formControlName="race"
+                   />
+                 </div>
+                 
+               </form>
+               <br>
+
+               <form [formGroup]="addusr">
+                <div class="form-group">
+                    <input
+                      type="hidden"
+                      class="form-control"
+                      formControlName="idToFollow"
+                      ngModel="{{displayUsrId}}" 
+                    />
+                </div> 
+                  <button type="button" class="btn btn-info" (click)="friend()">abonné</button>  &nbsp;
+               </form>
+               
+               <form [formGroup]="rmvusr">
+                <div class="form-group">
+                    <input
+                      type="hidden"
+                      class="form-control"
+                      formControlName="idToUnFollow"
+                      ngModel="{{displayUsrId}}" 
+                    />
+                </div> 
+                  <button type="button" class="btn btn-info" (click)="nofriend()">désabonné</button>
+               </form>
+        </div>
+    </div>
+
+</div>
+
