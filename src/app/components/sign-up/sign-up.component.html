@@ -12,6 +12,17 @@
                       placeholder=" votre nom "
                       formControlName="nom"
                     />
+                    <span *ngIf="soumissionNom" style="color: red;font-weight: bold;">nom incorrect!
+                      <button
+                      (click)="fermerAlert()"
+                      type="button"
+                      class="close"
+                      data-dismiss="alert"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    </span>
                 </div>
                 <div class="form-group">
                     <label>Pseudo*</label>
@@ -21,6 +32,17 @@
                       placeholder="votre pseudo"
                       formControlName="username"
                     />
+                    <span *ngIf="soumissionPseu" style="color: red;font-weight: bold;">username incorrect ou déjà pris!
+                      <button
+                      (click)="fermerAlert()"
+                      type="button"
+                      class="close"
+                      data-dismiss="alert"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    </span>
                 </div>  
                 <div class="form-group">
                     <label>E-mail*</label>
@@ -30,6 +52,17 @@
                       placeholder="votre email*"
                       formControlName="email"
                     />
+                    <span *ngIf="soumissionMail" style="color: red;font-weight: bold;"> Email incorrect!
+                      <button
+                      (click)="fermerAlert()"
+                      type="button"
+                      class="close"
+                      data-dismiss="alert"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    </span>
                 </div>
                 <div class="form-group">
                     <label>Mot de passe*</label>
@@ -39,6 +72,17 @@
                       placeholder="votre mot de passe"
                       formControlName="password"
                     />
+                    <span *ngIf="soumissionMdp" style="color: red;font-weight: bold;"> le mot de passe doit faire 6 caractères minimum!
+                      <button
+                      (click)="fermerAlert()"
+                      type="button"
+                      class="close"
+                      data-dismiss="alert"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    </span>
                 </div>
                 <button type="submit" value="Enregistrer" class="btn btn-primary">Enregistrer</button>
             </form>
@@ -48,7 +92,7 @@
             class="alert alert-success alert-dismissible fade show"
             role="alert"
           >
-            <strong>success !</strong>  profil  bien créer vous pouvez vous connectez!
+            <strong>success !</strong>  profil  bien créer vous pouvez vous connecter!
             <button
               (click)="fermerAlert()"
               type="button"
