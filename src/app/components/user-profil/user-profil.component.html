@@ -5,7 +5,7 @@
             <div class="menu">
                 
                     <div>
-                        <a routerLink="/user-profil/" class="active"> <img src="../../../assets/images/logoPangoBook.jpg" alt="logo book"> <strong> {{titre}} </strong></a> 
+                        <a routerLink="/user-profil/:_id" class="active"> <img src="../../../assets/images/logoPangoBook.jpg" alt="logo book"> <strong> {{titre}} </strong></a> 
                         <div> {{userDisplayName}} </div>
 
                     </div>
@@ -34,21 +34,21 @@
                 <div class="col-lg-2">
                     <br> <br>
                     <div>
-                        <div class="profil"> <img [src]="url" alt=""/> </div>
-                        <form [formGroup]="addImage">
+                        <div class="profil"> <img [src]="" alt=""/> </div>
+                        <!--<form [formGroup]="addImage">
                             <div class="form-group">
                               <label for="exampleFormControlFile1"></label>
                               <input type="file"  multiple (change)="selectImage($event)"   >
                               <br/>
-                              <input type="text" class="form-control" formControlName="name" placeholder="" value="{{userDisplayName}}" >
+                              <input type="text" *ngIf class="form-control" formControlName="name" placeholder="" value="{{userDisplayName}}" >
                               <br/>
-                              <input type="text" class="form-control" formControlName="userId" placeholder="userId" ngModel="{{currentUsrId}}" >
+                              <input type="text" *ngIf class="form-control" formControlName="userId" placeholder="userId" ngModel="{{currentUsrId}}" >
                               
                               <button type="submit" value="Enregistrer" class="btn btn-primary" (click)="chargement()">Télécharger</button> &nbsp;
                               
                             </div>
                       
-                          </form>
+                        </form>-->
                     </div>
                 </div>
                 <div class="col-lg-10">    
@@ -63,6 +63,7 @@
                         style="font-size: 20px; color: grey"
                         ></i>
                     </button>
+
 
 
                 </div>
@@ -97,6 +98,10 @@
                                     <span> {{user.famille}} </span>
                                     <span> {{user.race}} </span>
                                     <span> {{user.nourriture}} </span>
+                                    <span> </span>
+                                    <span>
+                                        <button routerLink="/user-profil/{{user._id}}" (click)="cancelUsr()"> supprimer</button>
+                                    </span>
 
                                 </div>
                             </div>

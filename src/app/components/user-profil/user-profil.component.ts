@@ -90,15 +90,17 @@ export class UserProfilComponent implements OnInit {
     });
   }
 
-  cancelProfil(){
+ /* cancelProfil(){
     this.crud.deletetUsr(this.route.snapshot.params._id).subscribe(res =>{
       this.crud.displayAllUsr().subscribe(res =>{
+        // display all usr   
         this.listesProfils = res;
       });
+      console.log( "result", res);
       return res;
     });
 
-  }
+  }*/
 
   // selection de l'image 
   selectImage(event:any){
@@ -123,6 +125,20 @@ export class UserProfilComponent implements OnInit {
       return res
     });
   
+  }
+
+  // test Delete request on friends list 
+  cancelUsr(){
+    console.log(this.route.snapshot.params._id)
+    this.crud.deletetUsr(this.route.snapshot.params._id).subscribe(res =>{
+      // display all friends 
+      /*this.crud.displayAllUsr().subscribe(res =>{
+        //this.listesProfils = res;
+        console.log(res);
+      });*/
+      console.log(res)
+      return res;
+    });
   }
 
   deco(){

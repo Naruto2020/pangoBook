@@ -27,7 +27,7 @@ const routes: Routes = [
   {path:"accueil", component:UserHomeComponent, canActivate:[SecurGuard], data:['user']},
   {path:"add_user/:_id", component:UserAddComponent, canActivate:[SecurGuard], data:['user']},
   {path:"notifications", component:UserNotifComponent, canActivate:[SecurGuard], data:['user']},
-  {path:"user-profil", component:UserProfilComponent, canActivate:[SecurGuard], data:['user']},
+  {path:"user-profil/:_id", component:UserProfilComponent, canActivate:[SecurGuard], data:['user']},
   {path:"user-update-profil/:_id", component:UserUpdateComponent},
   {path:"update-profil/:_id", component:SelfUpdateComponent},
   //admin 
