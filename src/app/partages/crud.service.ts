@@ -9,6 +9,7 @@ import {environment} from 'src/environments/environment';
 const displayAllUrl = environment.displayUrl;
 const followUrl = environment.ajtAmisUrl;
 const unfollowUrl = environment.retAmisUrl;
+const loadImgUrl = environment.imgUrl;
 
 @Injectable({
   providedIn: 'root'
@@ -52,6 +53,11 @@ export class CrudService {
    // follow 
    unfollowUsr(id:any, data: any){
      return this.http.patch(`${unfollowUrl}/${id}`, data);
+   }
+
+   // upload img
+   uploadImage(data:any){
+     return this.http.post(loadImgUrl, data);
    }
 
 }

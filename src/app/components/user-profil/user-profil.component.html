@@ -31,16 +31,45 @@
         </div>
         <div class="col-lg-12">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-2">
+                    <br> <br>
+                    <div>
+                        <div class="profil"> <img [src]="url" alt=""/> </div>
+                        <form [formGroup]="addImage">
+                            <div class="form-group">
+                              <label for="exampleFormControlFile1"></label>
+                              <input type="file"  multiple (change)="selectImage($event)"   >
+                              <br/>
+                              <input type="text" class="form-control" formControlName="name" placeholder="" value="{{userDisplayName}}" >
+                              <br/>
+                              <input type="text" class="form-control" formControlName="userId" placeholder="userId" ngModel="{{currentUsrId}}" >
+                              
+                              <button type="submit" value="Enregistrer" class="btn btn-primary" (click)="chargement()">Télécharger</button> &nbsp;
+                              
+                            </div>
+                      
+                          </form>
+                    </div>
+                </div>
+                <div class="col-lg-10">    
                     <br>
-                    <h2>Liste Amis</h2>
+                    <br>
+                    <h2> {{userDisplayName}} </h2>
+                    <p> Race : {{userDisplayRace}} </p>
+                    <button *ngIf="currentUsrId"> 
+                        <i
+                        routerLink="/update-profil/{{ currentUsrId }}"
+                        class="fa fa-edit"
+                        style="font-size: 20px; color: grey"
+                        ></i>
+                    </button>
+
 
                 </div>
-                
-
             </div>
-
         </div>
+        <br> <br>
+        <div class="col-lg-12"> <h2>Liste des amis</h2></div>
     </div>
 </div>
 <div class="container">
@@ -69,21 +98,6 @@
                                     <span> {{user.race}} </span>
                                     <span> {{user.nourriture}} </span>
 
-                                    <!--<button>
-                                        <i
-                                        routerLink="/user-update-profil/{{ user._id }}"
-                                        class="fa fa-edit"
-                                        style="font-size: 20px; color: grey"
-                                        ></i>
-                                    </button>
-                                    &nbsp;
-                                    <button (click)="cancelProfil()">
-                                        <i
-                                        routerLink="/user-profils/{{user._id}} "
-                                        class="fa fa-trash"
-                                        style="font-size: 20px; color: red"
-                                        ></i>
-                                      </button>-->
                                 </div>
                             </div>
                         </div>
@@ -96,36 +110,6 @@
         </td>
     
     </tr>
-       
-            <!--<tbody *ngFor='let profil of listesProfils'>
-                <tr *ngIf="fwings === profil._id"> 
-    
-                        <td> {{profil.username}} </td>
-                        <td> {{profil.age}} </td>
-                        <td> {{profil.famille}} </td> 
-                        <td> {{profil.race}} </td>
-                        <td> {{profil.nourriture}} </td>  
-                        <td>
-                            <button>
-                                <i
-                                routerLink="/user-update-profil/{{ profil._id }}"
-                                class="fa fa-edit"
-                                style="font-size: 20px; color: grey"
-                                ></i>
-                            </button>
-                        </td>     
-                        &nbsp; 
-                        <td>
-                          <button (click)="cancelProfil()">
-                            <i
-                            routerLink="/user-profils/{{profil._id}} "
-                            class="fa fa-trash"
-                            style="font-size: 20px; color: red"
-                            ></i>
-                          </button>
-                        </td>                     
-                </tr>         
-            </tbody>-->
 
 </div>
 

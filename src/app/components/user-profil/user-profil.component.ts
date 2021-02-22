@@ -20,11 +20,17 @@ export class UserProfilComponent implements OnInit {
   titre:String = "PangoBook";
   classActive = 'active';
 
+  imgSite:string = environment.img;
+  images:any;
+
+  url:any;
+
   listesProfils:any;
   currentUsrId:any;
   displayUsrId:any;
   userDisplayId:any;
   userDisplayName:any;
+  userDisplayRace:any;
 
   tabFollowers:any;
   tabFollowings:any;
@@ -32,6 +38,12 @@ export class UserProfilComponent implements OnInit {
   showfwings:any;
 
   compteur = 0;
+
+  addImage = new FormGroup({
+    file : new FormControl(""),
+    name : new FormControl(""),
+    userId : new FormControl("")
+  });
 
   constructor(private crud:CrudService, private auth:AuthService,
     private fb: FormBuilder, private router:Router,
@@ -57,6 +69,10 @@ export class UserProfilComponent implements OnInit {
           this.tabFollowers = user.followers;
           this.tabFollowings = user.followings;
           this.userDisplayName = user.username;
+          this.userDisplayRace = user.race;
+          this.url = user.photo;
+          //console.log("tof", this.imgSite + this.url);
+
 
           for(let follwrs of tab){
             this.showfwers = follwrs
@@ -82,6 +98,31 @@ export class UserProfilComponent implements OnInit {
       return res;
     });
 
+  }
+
+  // selection de l'image 
+  selectImage(event:any){
+    console.log(event);
+    if(event.target.files.length > 0){
+        const file = event.target.files[0];
+        console.log(file)
+      return this.images = file;
+    }
+      
+  }
+
+  //creation du fomulaire et ajout des valeurs saisies par l'utilisateur 
+  formData = new FormData();
+  chargement(){
+    this.formData.append("file", this.images);
+    this.formData.append("name", this.userDisplayName);
+    this.formData.append("userId", this.currentUsrId);
+    this.crud.uploadImage(this.formData).subscribe(res =>{
+      let newR = Object.values(res);
+      //this.url = `${this.imgSite}/${newR[1]}`;
+      return res
+    });
+  
   }
 
   deco(){

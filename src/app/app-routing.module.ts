@@ -9,6 +9,7 @@ import {UserAddComponent} from './components/user-add/user-add.component';
 import {UserNotifComponent} from './components/user-notif/user-notif.component';
 import {UserProfilComponent} from './components/user-profil/user-profil.component';
 import {UserUpdateComponent} from './components/user-update/user-update.component';
+import {SelfUpdateComponent} from './components/self-update/self-update.component';
 
 //admin 
 import {AdminComponent} from './components/admin/admin.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path:"notifications", component:UserNotifComponent, canActivate:[SecurGuard], data:['user']},
   {path:"user-profil", component:UserProfilComponent, canActivate:[SecurGuard], data:['user']},
   {path:"user-update-profil/:_id", component:UserUpdateComponent},
+  {path:"update-profil/:_id", component:SelfUpdateComponent},
   //admin 
   {path:"admin/:_id", component:AdminComponent},
 ];

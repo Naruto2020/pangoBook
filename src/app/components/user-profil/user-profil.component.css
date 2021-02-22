@@ -38,3 +38,12 @@
 td span {
   padding: 69px;
 }
+
+.profil {
+  background-color: grey;
+  border: ridge 5px beige;
+  border-radius: 110px;
+  width: 110px;
+  height: 110px;
+  margin: 5px;
+}

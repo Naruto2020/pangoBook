@@ -11,6 +11,8 @@ export const environment = {
   jwtUrl : "http://127.0.0.1:2000/jwtid",
   ajtAmisUrl : "http://127.0.0.1:2000/api/user/follow",
   retAmisUrl : "http://127.0.0.1:2000/api/user/unfollow",
+  imgUrl : "http://127.0.0.1:2000/api/user/upload",
+  img : "http://127.0.0.1:2000",
 };
 
 /*

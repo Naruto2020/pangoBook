@@ -17,6 +17,7 @@ import { UserNotifComponent } from './components/user-notif/user-notif.component
 import { UserProfilComponent } from './components/user-profil/user-profil.component';
 import { UserUpdateComponent } from './components/user-update/user-update.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { SelfUpdateComponent } from './components/self-update/self-update.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AdminComponent } from './components/admin/admin.component';
     UserNotifComponent,
     UserProfilComponent,
     UserUpdateComponent,
-    AdminComponent
+    AdminComponent,
+    SelfUpdateComponent
   ],
   imports: [
     BrowserModule,
